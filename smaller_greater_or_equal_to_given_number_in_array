@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int n, target;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter %d elements of the array: ", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the number to compare with: ");
+    scanf("%d", &target);
+
+    int smaller_count = 0, equal_count = 0, greater_count = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < target) {
+            smaller_count++;
+        } else if (arr[i] == target) {
+            equal_count++;
+        } else {
+            greater_count++;
+        }
+    }
+    
+    printf("Number of elements smaller than %d: %d\n", target, smaller_count);
+    printf("Number of elements equal to %d: %d\n", target, equal_count);
+    printf("Number of elements greater than %d: %d\n", target, greater_count);
+
+    return 0;
+}
