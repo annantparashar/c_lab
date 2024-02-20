@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void fibonacci(int n) {
+    int prev = 0, curr = 1, next;
+    printf("Fibonacci series for first %d numbers: ", n);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", prev);
+        next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    printf("Enter the number of Fibonacci numbers: ");
+    scanf("%d", &n);
+    fibonacci(n);
+    return 0;
+}
