@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int row, col;
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &row, &col);
+
+    if (row != col) {
+        printf("Conversion to upper triangular matrix is not possible as the matrix is not square.\n");
+        return 0;
+    }
+
+    int mat[row][col];
+
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    for (int i = 0; i < row; i++) {
+        for (int j = i + 1; j < col; j++) {
+            mat[i][j] = 0;
+        }
+    }
+
+    printf("Upper triangular matrix:\n");
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
